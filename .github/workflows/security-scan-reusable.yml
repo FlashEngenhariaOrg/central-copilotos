@@ -1,0 +1,49 @@
+# Cópia local do Security Scans reutilizável de FlashEngenhariaOrg/.github (versão 32fce6b).
+# Fica no repositório porque o espelho pessoal (jonathanmiguel-flash) não enxerga o repositório
+# privado .github da organização: com a chamada remota, o workflow falhava ao carregar lá e
+# gerava e-mail a cada push. Ao atualizar o scan central, atualizar esta cópia também.
+name: Security Scans (reusable)
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  gitleaks:
+    name: Gitleaks (secret scanning)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+      - name: Run gitleaks
+        run: |
+          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:latest detect --source="/repo" --redact -v
+
+  osv-scanner:
+    name: OSV-Scanner (dependency vulnerabilities)
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+    uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@e69cc6c86b31f1e7e23935bbe7031b50e51082de # v2.0.2
+    with:
+      scan-args: |-
+        --recursive
+        --skip-git
+        ./
+      # Private repos on the Free plan don't have GitHub Advanced Security,
+      # so the Code Scanning SARIF upload is not available.
+      upload-sarif: false
+
+  semgrep:
+    name: Semgrep (static analysis)
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - run: semgrep scan --config auto --error
