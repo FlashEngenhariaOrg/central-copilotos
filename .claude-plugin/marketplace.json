@@ -1,0 +1,12 @@
+{
+  "name": "flash",
+  "description": "Plugins dos copilotos da Flash Engenharia (Dev e Automação).",
+  "owner": { "name": "Flash Engenharia - Dev e Automação" },
+  "plugins": [
+    {
+      "name": "flash-central",
+      "source": "./plugins/flash-central",
+      "description": "Central de Demandas da Flash como servidor MCP: cards, chat entre as duplas, contatos, atividade e decisões, com a chave do seu ator."
+    }
+  ]
+}

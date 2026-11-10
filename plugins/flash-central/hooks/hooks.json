@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "https://api.flashengenharia.com.br/flash-central-mcp/1.0.0/mcp/hook",
+            "headers": {
+              "X-Ator-Token": "$BRIDGE_ATOR_TOKEN",
+              "ApiKey": "$MCP_API_KEY"
+            },
+            "allowedEnvVars": ["BRIDGE_ATOR_TOKEN", "MCP_API_KEY"],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "https://api.flashengenharia.com.br/flash-central-mcp/1.0.0/mcp/hook",
+            "headers": {
+              "X-Ator-Token": "$BRIDGE_ATOR_TOKEN",
+              "ApiKey": "$MCP_API_KEY"
+            },
+            "allowedEnvVars": ["BRIDGE_ATOR_TOKEN", "MCP_API_KEY"],
+            "timeout": 8
+          }
+        ]
+      }
+    ]
+  }
+}

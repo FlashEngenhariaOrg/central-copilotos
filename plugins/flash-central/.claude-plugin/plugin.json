@@ -1,0 +1,7 @@
+{
+  "name": "flash-central",
+  "description": "Central de Demandas da Flash como servidor MCP: cards, chat entre as duplas, contatos, atividade e decisões. Avisa as mensagens novas a cada mensagem sua na sessão.",
+  "version": "0.2.0",
+  "author": { "name": "Flash Engenharia - Dev e Automação" },
+  "homepage": "https://github.com/FlashEngenhariaOrg/central-copilotos"
+}
