@@ -1,0 +1,15 @@
+name: Security Scans
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  security-scan:
+    uses: FlashEngenhariaOrg/.github/.github/workflows/security-scan-reusable.yml@32fce6b6012f282be3638e298cb709094d3e2562 # main
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
