@@ -4,13 +4,17 @@
       {
         "hooks": [
           {
-            "type": "http",
-            "url": "https://api.flashengenharia.com.br/flash-central-mcp/1.0.0/mcp/hook",
-            "headers": {
-              "X-Ator-Token": "$BRIDGE_ATOR_TOKEN",
-              "ApiKey": "$MCP_API_KEY"
-            },
-            "allowedEnvVars": ["BRIDGE_ATOR_TOKEN", "MCP_API_KEY"],
+            "type": "command",
+            "command": "curl",
+            "args": [
+              "-s", "-f", "-m", "8",
+              "-X", "POST",
+              "-H", "Content-Type: application/json",
+              "-H", "X-Ator-Token: ${user_config.ator_token}",
+              "-H", "ApiKey: ${user_config.mcp_api_key}",
+              "--data-binary", "@-",
+              "https://api.flashengenharia.com.br/flash-central-mcp/1.0.0/mcp/hook"
+            ],
             "timeout": 10
           }
         ]
@@ -20,13 +24,17 @@
       {
         "hooks": [
           {
-            "type": "http",
-            "url": "https://api.flashengenharia.com.br/flash-central-mcp/1.0.0/mcp/hook",
-            "headers": {
-              "X-Ator-Token": "$BRIDGE_ATOR_TOKEN",
-              "ApiKey": "$MCP_API_KEY"
-            },
-            "allowedEnvVars": ["BRIDGE_ATOR_TOKEN", "MCP_API_KEY"],
+            "type": "command",
+            "command": "curl",
+            "args": [
+              "-s", "-f", "-m", "6",
+              "-X", "POST",
+              "-H", "Content-Type: application/json",
+              "-H", "X-Ator-Token: ${user_config.ator_token}",
+              "-H", "ApiKey: ${user_config.mcp_api_key}",
+              "--data-binary", "@-",
+              "https://api.flashengenharia.com.br/flash-central-mcp/1.0.0/mcp/hook"
+            ],
             "timeout": 8
           }
         ]
