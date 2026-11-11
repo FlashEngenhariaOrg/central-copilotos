@@ -1,7 +1,23 @@
 {
   "name": "flash-central",
-  "description": "Central de Demandas da Flash como servidor MCP: cards, chat entre as duplas, contatos, atividade e decisões. Avisa as mensagens novas a cada mensagem sua na sessão.",
-  "version": "0.2.0",
+  "description": "Central de Demandas da Flash como servidor MCP: cards, chat entre as duplas, contatos, atividade e decisões. Pede as suas chaves na instalação e avisa as mensagens novas a cada mensagem sua na sessão.",
+  "version": "0.3.0",
   "author": { "name": "Flash Engenharia - Dev e Automação" },
-  "homepage": "https://github.com/FlashEngenhariaOrg/central-copilotos"
+  "homepage": "https://github.com/FlashEngenhariaOrg/central-copilotos",
+  "userConfig": {
+    "ator_token": {
+      "type": "string",
+      "title": "Chave do ator da sua dupla",
+      "description": "A chave que o Jonathan entregou para a sua dupla (começa com fla_). Diz à Central quem você é. Fica guardada no cofre seguro do sistema.",
+      "sensitive": true,
+      "required": true
+    },
+    "mcp_api_key": {
+      "type": "string",
+      "title": "Chave dos copilotos (MCP_API_KEY)",
+      "description": "A chave do gateway que só abre o MCP da Central (arquivo mcp.env). É a mesma para todas as duplas. Fica guardada no cofre seguro do sistema.",
+      "sensitive": true,
+      "required": true
+    }
+  }
 }
