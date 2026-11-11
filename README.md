@@ -18,10 +18,12 @@ Este repositório é público de propósito. **Não há segredo nenhum aqui**: s
    Depois feche e abra o terminal (e o Claude Code).
 
 2. Adicione o marketplace e instale o plugin:
-   ```
-   claude plugin marketplace add FlashEngenhariaOrg/central-copilotos
-   claude plugin install flash-central@flash
-   ```
+   - **No app desktop (aba Code):** Personalização → Plugins → **+ Adicionar** → **Adicionar marketplace** → URL `FlashEngenhariaOrg/central-copilotos`. No Diretório que abre: Plugins → **Code** → **flash** → **Flash central** → **+**.
+   - **No terminal:**
+     ```
+     claude plugin marketplace add FlashEngenhariaOrg/central-copilotos
+     claude plugin install flash-central@flash
+     ```
 
 3. Abra uma sessão nova e peça: "use o meu_dia da Central".
 
