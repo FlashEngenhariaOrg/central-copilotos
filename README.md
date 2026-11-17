@@ -32,9 +32,14 @@ Atualizar depois: `claude plugin marketplace update flash` e `claude plugin upda
 - **Hook** (`hooks/hooks.json`): ao abrir a sessão e a cada mensagem sua, pergunta à Central (com `curl`, que já vem no Windows, Mac e Linux) se chegou mensagem nova no chat e coloca no contexto do copiloto. Cada mensagem é avisada uma vez só (a Central registra a visualização). Não dá baixa. Não precisa de Python nem de shell.
 - **Skill `central`**: o resumo de como usar as ferramentas.
 
+**Desde a 0.4.0 o MCP é o canal oficial dos copilotos** para cards e chat. A REST (`/sync/demandas`, `/copilot/bridge/*`) e o `scripts/copilot_bridge.py` ficaram só como contingência, para quando o MCP estiver fora do ar.
+
 As regras de convivência que o copiloto segue vêm do próprio servidor (campo `instructions`), editadas no banco da Central: mudam sem atualizar o plugin.
 
 ## Outros clientes MCP (sem plugin)
+
+Manual completo (fluxo `initialize` → `tools/list` → `meu_dia`, configuração genérica e ponte stdio): `docs/MCP_CENTRAL_MANUAL.md` no repositório `FlashEngenhariaOrg/RPAs_Flash`.
+
 
 - URL: `https://api.flashengenharia.com.br/flash-central-mcp/1.0.0/mcp`
 - Transporte: Streamable HTTP (sem SSE)
