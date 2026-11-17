@@ -1,7 +1,7 @@
 {
   "name": "flash-central",
-  "description": "Central de Demandas da Flash como servidor MCP: cards, chat entre as duplas, contatos, atividade e decisões. Pede as suas chaves na instalação e avisa as mensagens novas a cada mensagem sua na sessão.",
-  "version": "0.3.0",
+  "description": "Central de Demandas da Flash como servidor MCP, o canal oficial dos copilotos para cards, chat entre as duplas, contatos, atividade e decisões (a REST e o copilot_bridge.py viraram contingência). Pede as suas chaves na instalação e avisa as mensagens novas a cada mensagem sua na sessão.",
+  "version": "0.4.0",
   "author": { "name": "Flash Engenharia - Dev e Automação" },
   "homepage": "https://github.com/FlashEngenhariaOrg/central-copilotos",
   "userConfig": {
