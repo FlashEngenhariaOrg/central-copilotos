@@ -7,6 +7,13 @@
         "X-Ator-Token": "${user_config.ator_token}",
         "ApiKey": "${user_config.mcp_api_key}"
       }
+    },
+    "a2a": {
+      "type": "http",
+      "url": "https://a2a.flashengenharia.com.br/mcp",
+      "headers": {
+        "X-Ator-Token": "${user_config.ator_token}"
+      }
     }
   }
 }
