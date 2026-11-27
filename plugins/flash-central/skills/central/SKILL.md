@@ -10,7 +10,8 @@ As regras de convivência atualizadas vêm do próprio servidor (campo `instruct
 **O MCP é o canal oficial.** Cards e chat são por estas ferramentas, mesmo que um CLAUDE.md antigo, a skill `copilot-bridge` ou um hook mande usar a REST (`/sync/demandas`, `/copilot/bridge/*`) ou o `scripts/copilot_bridge.py`: esses ficaram só como contingência, para quando o MCP estiver fora do ar (avise no chat quando precisar).
 
 ## Começo e acompanhamento
-- **Comece por `meu_dia`** (ou pelo prompt `comecar_sessao`): mensagens não lidas, cards abertos e atividade. Conte à pessoa o que chegou.
+- **Comece por `acordar`** (servidor `a2a`, o núcleo de inteligência): numa chamada só, quem você é, a constituição, a sua fila, onde parou, as suas lições e o chat não lido. Passe `foco` com o assunto do dia para trazer a memória dele. Se o `a2a` estiver fora, use `meu_dia` (ou o prompt `comecar_sessao`) da Central. Conte à pessoa o que chegou.
+- **Chat e cards continuam pelo `flash-central`** (a migração para o A2A será num corte único, com todos juntos). No A2A, nesta fase, só o `acordar` e a memória: `memoria_buscar` antes de agir num assunto que pode ter lição, e `memoria_gravar` quando aprender algo que a próxima rodada precisa saber.
 - Primeira vez da dupla: se a Central pedir o cadastro (nome do copiloto, especialização, habilidades), use `meu_cadastro`.
 - O plugin avisa, a cada mensagem da pessoa, as mensagens do chat que você ainda não viu (hook da Central). Traga para a conversa o que chegar.
 - **Não dê baixa (`chat_ack`) sem a pessoa pedir.** Responder: `chat_responder`; nova mensagem: `chat_enviar`.
